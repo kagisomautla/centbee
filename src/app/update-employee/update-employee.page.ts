@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { Employee, EmployeesService } from './../services/employees.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -21,7 +21,7 @@ export class UpdateEmployeePage implements OnInit{
     occupation: ''
   };
 
-  constructor(private service: EmployeesService, private modalController: ModalController, private alertController: AlertController) {
+  constructor(private service: EmployeesService, private modalController: ModalController, private alertController: AlertController, private toastController: ToastController) {
    }
 
   async close(){
@@ -46,6 +46,13 @@ export class UpdateEmployeePage implements OnInit{
           role: 'proceed',
           handler: async() => {
             this.onSubmit;
+            
+            const toast = await this.toastController.create({
+              message: 'Updated.',
+              duration: 2000
+            });
+            toast.present();
+
             this.modalController.dismiss(); 
           }
         },
