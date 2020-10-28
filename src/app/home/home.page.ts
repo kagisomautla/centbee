@@ -26,9 +26,7 @@ export class HomePage implements OnInit{
     .then(modal=>{
       modal.present();
       return modal.onDidDismiss();
-      }).then(res=>{
-        console.log(res);
-      })
+    })
   }
 
   updateEmployee(employee: Employee){
@@ -42,12 +40,10 @@ export class HomePage implements OnInit{
   }
  
   refreshPage(event) {
-    console.log('Begin async operation');
     this.subscription = this.service.getAllData().subscribe(employee => this.employee = employee);
     this.subscription.closed;
 
     setTimeout(() => {
-      console.log('Async operation has ended');
       event.target.complete();
     }, 2000);
   }
