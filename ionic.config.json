@@ -1,0 +1,7 @@
+{
+  "name": "centbee",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
