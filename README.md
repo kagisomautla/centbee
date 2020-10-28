@@ -2,7 +2,7 @@
 
 ### Running the application to a localhost server
 1. Run the express server first. See README document for the api. 
-2. In your IDE's console, locate app\centbee.
+2. In your IDE's console, locate centbee.
 3. Run "ionic serve -l" to serve the application onto a localhost server.
 4. Once the application is connected, it'll connect to the already running express server.
 
