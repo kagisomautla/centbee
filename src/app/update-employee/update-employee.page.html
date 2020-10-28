@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-size: 15px;"></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close-circle-outline">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" padding>
+  <form #f="ngForm" (ngSubmit) = "onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="data.name" name="name" placeholder="name">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="data.surname" name="surname" placeholder="surname">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="data.occupation" name="occupation" placeholder="occupation">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <ion-button type="submit" (click)="presentAlert()" expand="block" size="small">
+      <ion-icon name="person-add-outline"></ion-icon>
+      save
+    </ion-button>
+  </form>
+  <ion-alert-controller></ion-alert-controller>
+</ion-content>
